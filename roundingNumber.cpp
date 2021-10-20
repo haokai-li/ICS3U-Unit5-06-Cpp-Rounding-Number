@@ -2,13 +2,13 @@
 //
 // Created by: Haokai
 // Created on: Oct 2021
-// This Program calculate the volume of a cylinder
+// This Program is about rounding number
 #include <iostream>
 #include <string>
 #include <cmath>
 
 float roundNumber(float userNumberNumber, float userDecimalNumber) {
-    // This Program calculate the volume of a cylinder
+    // This Program is about rounding number
     float numberOutput;
     float numberFloat;
     int numberFloatFinal;
