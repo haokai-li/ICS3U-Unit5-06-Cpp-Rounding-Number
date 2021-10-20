@@ -7,18 +7,15 @@
 #include <string>
 #include <cmath>
 
-float roundNumber(float userNumberNumber, float userDecimalNumber) {
+void roundNumber(float &userNumberNumber, int &userDecimalNumber) {
     // This Program is about rounding number
-    float numberOutput;
     float numberFloat;
     int numberFloatFinal;
 
     // process
     numberFloat = userNumberNumber * pow(10, userDecimalNumber) + 0.5;
     numberFloatFinal = numberFloat;
-    numberOutput = numberFloatFinal / pow(10, userDecimalNumber);
-
-    return numberOutput;
+    userNumberNumber = numberFloatFinal / pow(10, userDecimalNumber);
 }
 
 main() {
@@ -26,7 +23,7 @@ main() {
     std::string userNumberString;
     float userNumberNumber;
     std::string userDecimalString;
-    float userDecimalNumber;
+    int userDecimalNumber;
     float roundingNumber;
 
     // input
@@ -38,13 +35,13 @@ main() {
 
     try {
         userNumberNumber = std::stof(userNumberString);
-        userDecimalNumber = std::stof(userDecimalString);
+        userDecimalNumber = std::stoi(userDecimalString);
 
         // call functions
-        roundingNumber = roundNumber(userNumberNumber, userDecimalNumber);
+        roundNumber(userNumberNumber, userDecimalNumber);
 
         // output
-        std::cout << "The rounded number is " << roundingNumber << std::endl;
+        std::cout << "The rounded number is " << userNumberNumber << std::endl;
     } catch (std::invalid_argument) {
         // output
         std::cout << "You didn't enter an integer." << std::endl;
